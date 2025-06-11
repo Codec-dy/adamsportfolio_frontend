@@ -22,9 +22,9 @@ const MobileNav = ({insta, email,facebook}) => {
                     </div>
                     <div className="flex flex-col gap-6 p-5 text-2xl text-center">
                         <a href="/" className="font-semibold">Home</a>
-                        <a href="work" className="font-semibold">Work</a>
-                        <a href="about" className="font-semibold">About</a>
-                        <a href="contact" className="font-semibold">Contact</a>
+                        <a href="/work" className="font-semibold">Work</a>
+                        <a href="/about" className="font-semibold">About</a>
+                        <a href="/contact" className="font-semibold">Contact</a>
                     </div>
                     <div className="flex flex-row gap-6 p-5 bg-zinc-100 absolute bottom-20 w-full justify-center">
                         <a target="_blank" href={insta}><img src="instagram-brands.svg" className="w-6 h-6 mr-2" /></a>

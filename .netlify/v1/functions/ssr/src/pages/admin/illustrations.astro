@@ -1,0 +1,26 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro"
+import Layout2_admin from "../../layouts/Layout2_admin.astro"
+import AdminLayout from "../../layouts/AdminLayout.astro"
+import ProjectPopUp from "../../components/admin/ProjectPopUp"
+import { splitImages } from "../../utils/functions"
+import { getData } from "../../utils/crud"
+import Rows from "../../components/Rows.astro"
+const api = "http://localhost:3000/api/collection"; 
+const illustration = await getData(api+"?model=illustration&getAll=true");
+console.log(illustration);
+---
+
+<AdminLayout>
+    <Layout2_admin>
+         <div class='flex flex-col p-6 overflow-y-scroll'>
+            <ProjectPopUp title={"Illustration"} client:load/>
+                 {splitImages(illustration).map((arr, index) => (
+                <Rows images={arr} key={index}  isAdmin="true" />
+            ))
+
+            }
+        </div>
+        
+    </Layout2_admin>
+</AdminLayout>
