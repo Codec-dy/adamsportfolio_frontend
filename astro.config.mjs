@@ -3,13 +3,13 @@ import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
 import partytown from '@astrojs/partytown';
-import netlify from '@astrojs/netlify';
+import node from '@astrojs/node'
 import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), partytown(), tailwind()],
   output: 'server', // ← This enables SSR
-  adapter: netlify(),
+   adapter: node({ mode: 'standalone' }),
   // @ts-ignore
   middleware: './src/middleware.js',
   
