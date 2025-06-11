@@ -7,11 +7,10 @@ import partytown from '@astrojs/partytown';
 import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
+  base: "/adam-portfolio/",
   integrations: [react(), partytown(), tailwind()],
   // @ts-ignore
   middleware: './src/middleware.js',
 
-  // vite: {
-  //   plugins: [tailwindcss()]
-  // }
+
 });

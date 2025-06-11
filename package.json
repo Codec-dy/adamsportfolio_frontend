@@ -2,11 +2,13 @@
   "name": "shaggy-star",
   "type": "module",
   "version": "0.0.1",
+  "homepage": "https://codec-dy.github.io/adam-portfolio",
   "scripts": {
     "dev": "astro dev --host",
     "build": "astro build",
+    "astro": "astro",
     "preview": "astro preview",
-    "astro": "astro"
+  "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
