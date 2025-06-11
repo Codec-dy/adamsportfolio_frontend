@@ -66,15 +66,15 @@ useEffect(() => {
         </div>
         <div className='flex flex-col items-start gap-2'>
             <h1 className='font-semibold text-lg'>Background</h1>
-            <textarea onChange={(e)=>setDetails({...details,background:e.target.value.trim()})} className='w-full p-3 rounded-sm border border-gray-400 flex-1' placeholder='Background'  rows='4' value={details?details.background:''}></textarea>
+            <textarea onChange={(e)=>setDetails({...details,background:e.target.value})} className='w-full p-3 rounded-sm border border-gray-400 flex-1' placeholder='Background'  rows='4' value={details?details.background:''}></textarea>
         </div>
         <div className='flex flex-col items-start gap-2'>
             <h1 className='font-semibold text-lg'>Education</h1>
-            <textarea onChange={(e)=>setDetails({...details,education:e.target.value.trim()})} className='w-full p-3 rounded-sm border border-gray-400 flex-1'  placeholder='Education' rows='4' value={details?details.education:''}></textarea>
+            <textarea onChange={(e)=>setDetails({...details,education:e.target.value})} className='w-full p-3 rounded-sm border border-gray-400 flex-1'  placeholder='Education' rows='4' value={details?details.education:''}></textarea>
         </div>
         <div className='flex flex-col items-start gap-2'>
             <h1 className='font-semibold text-lg'>Skills</h1>
-            <textarea onChange={(e)=>setDetails({...details,skills:e.target.value.trim()})} className='w-full p-3 rounded-sm border border-gray-400 flex-1' placeholder='Skills' rows='4'  value={details?details.skills:''}></textarea>
+            <textarea onChange={(e)=>setDetails({...details,skills:e.target.value})} className='w-full p-3 rounded-sm border border-gray-400 flex-1' placeholder='Skills' rows='4'  value={details?details.skills:''}></textarea>
         </div>
         <Button text="Update" perform={handleChange2} />
     </div>
