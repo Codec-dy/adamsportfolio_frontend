@@ -2,6 +2,7 @@ const splitImages = (images) => {
     const result = [];
     let count = 0;
     let index = 0;
+    console.log(images);
     while (count < images.length) {
         let addition = 3
         if(index%2!==0){
