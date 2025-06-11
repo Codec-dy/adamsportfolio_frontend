@@ -1,0 +1,1 @@
+import{j as e}from"./index.BRsxknAj.js";import"./index.BJfUAbRs.js";import{B as s,b as i}from"./crud.BZ73tJ4N.js";const c=({id:t,model:l})=>{const o="http://localhost:3000/api/collection";return e.jsx("div",{className:"flex flex-col sm:flex-row gap-4",children:e.jsx("div",{onClick:()=>{i(o,t,l)},children:e.jsx(s,{text:"Delete"})})})};export{c as default};
