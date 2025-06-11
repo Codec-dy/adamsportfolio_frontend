@@ -1,0 +1,7 @@
+---
+// filepath: c:\Users\CodecD\Desktop\Website Projects\Adam_Portfolio\frontend\src\components\MainWorkCatCard.astro
+const { title = "Main Work Category", description = "This card represents the main work category of the portfolio.", image='', link = "/work-category", linkText = "View Work Category" } = Astro.props;
+---
+<a href={link}><div style={`background-image: url(${image});`} class="relative flex-1 bg-cover bg-center  mb-6 sm:h-[400px] w-full h-[280px] rounded-2xl overflow-hidden shadow-lg">
+    <div class="bg-white rounded-2xl p-3 w-fit mt-3 ml-4">{title}</div>
+</div></a>

@@ -1,0 +1,29 @@
+---
+import MobileNav from "./MobileNav"
+import { getData } from "../utils/crud";
+const {api} = Astro.locals;  
+let details = await getData(api+"?model=websettings&getAll=true") ;
+details = details[0] || {
+    instagram: "No Instagram information available.",
+    email: "No email information available.",};
+---
+
+<nav class="sm:flex hidden w-full h-[130px] top-0 z-4 justify-between items-center bg-none font-semibold text-white p-4">
+  <div class="flex items-center gap-3 pl-20">
+    <img src="/logo.png" alt="Logo" class="h-10 w-10 rounded-full" />
+  </div>
+  <div class="flex items-center gap-6 bg-white rounded-[40px] p-5">
+    <a href="/" class="text-zinc-700 font-semibold">Home</a>
+    <a href="work" class="text-zinc-700 font-semibold">Work</a>
+    <a href="about" class="text-zinc-700 font-semibold">About</a>
+    <a href="contact" class="text-zinc-700 font-semibold">Contact</a>
+
+  </div>
+  <div class="flex items-center gap-3 pr-20">
+    <a target="_blank" href={details.instagram}><img src="instagram-brands.svg" class="inline-block w-6 h-6 mr-2" /></a>
+    <a  href={`mailto:${details.email}`}><img src="envelope-solid.svg" class="inline-block w-6 h-6 mr-2"/></a>
+    <a target="_blank" href={details.facebook}><img src="facebook-brands.svg" class="inline-block w-6 h-6 mr-2"/></a>
+  </div>
+</nav>
+<MobileNav insta={details.instagram} email={details.email} facebook={details.facebook} client:load />
+

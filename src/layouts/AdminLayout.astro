@@ -1,0 +1,22 @@
+---
+import Navbar from '../components/admin/Navbar.astro';
+
+const { title = 'Sprout Design Dashboard' } = Astro.props;
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="stylesheet" href="/src/styles/global.css" />
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <title>{title}</title>
+    </head>
+    <body class="flex flex-row max-h-screen">
+        
+        <Navbar />   
+        <div class="flex-grow overflow-y-auto">
+            <slot />
+        </div> 
+    </body>
+</html>

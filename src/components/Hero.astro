@@ -1,0 +1,14 @@
+---
+import Layout2 from "../layouts/Layout2.astro";
+import Button from "./Button";
+---
+
+<div  style="background: url(bg4.jpg) no-repeat center center / cover; " class="flex flex-row h-screen p-10 justify-center items-center max-w-[1500px] brightness-90">
+     <div  class="flex flex-1 flex-col items-start gap-10 sm:p-20">
+          <h1 class="font-semibold text-4xl sm:text-7xl text-black text-left">Welcome to my Portfolio</h1>
+          <p class="text-left text-black sm:text-2xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, corrupti! Dignissimos illum quisquam fuga unde officiis eveniet non? Neque odit optio nemo explicabo fugiat in placeat ut maxime quibusdam sequi. </p>
+          <a href="work"><Button text={'Projects'} perform={()=>('')} /></a>
+     </div>
+     <div class="flex-1 h-full sm:block hidden" style="background: url(bg2.jpeg) no-repeat center center / cover;">
+     </div>
+</div>

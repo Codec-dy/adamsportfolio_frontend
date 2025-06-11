@@ -1,0 +1,26 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro"
+import Layout2_admin from "../../layouts/Layout2_admin.astro"
+
+
+---
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>Admin Login</title>
+</head>
+<body>
+<Layout2_admin>
+ <div class='w-[400px] text-black font-semibold mt-[-200px]'>
+        <div class='flex flex-col gap-4 p-4 w-full'>
+        <h1 class='text-2xl font-semibold text-left'>Admin Login</h1>
+        <input  placeholder="Username" type='text' class='w-full border border-gray-900 p-2'/>
+        <input  placeholder="Password" type='password' class='w-full border border-gray-900 p-2'/>
+        <button>Login </button>
+        </div>
+</div>
+</Layout2_admin>
+</body>

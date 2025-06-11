@@ -1,0 +1,8 @@
+---
+const { title = "Title", size="text-4xl" } = Astro.props;
+---
+<div class="relative w-fit flex self-center py-2 items-center justify-center mb-5">
+<div class="absolute title-border w-2/5 h-[2px] left-0 top-0"></div>
+<h1 class={`${size} font-bold text-center text-[#F28F38]`}>{title}</h1>
+<div class="absolute title-border w-2/5 h-[2px] left-0 bottom-0"></div>
+</div>
