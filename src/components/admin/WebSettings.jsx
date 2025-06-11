@@ -3,7 +3,7 @@ import { changeUser, getData } from '../../utils/crud';
 import Button from '../Button';
 
 const WebSettings = () => {
-const api = "http://localhost:3000/api/"; 
+const api = "https://adamsportfolio-backend.onrender.com/api/"; 
 const [show,setShow] = React.useState(false)
 
 const [details, setDetails] = useState({user:'',email: '', phone: '', instagram: '', facebook: '', background: '', education: '', skills: ''});
