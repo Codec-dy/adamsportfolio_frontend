@@ -7,7 +7,7 @@ import partytown from '@astrojs/partytown';
 import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
-  base: "/adam-portfolio/",
+  base: "/adamsportfolio_frontend/",
   integrations: [react(), partytown(), tailwind()],
   // @ts-ignore
   middleware: './src/middleware.js',

@@ -2,13 +2,13 @@
   "name": "shaggy-star",
   "type": "module",
   "version": "0.0.1",
-  "homepage": "https://codec-dy.github.io/adam-portfolio",
+  "homepage": "https://codec-dy.github.io/adamsportfolio_frontend",
   "scripts": {
     "dev": "astro dev --host",
     "build": "astro build",
     "astro": "astro",
     "preview": "astro preview",
-  "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.3"
   }
