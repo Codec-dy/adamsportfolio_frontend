@@ -7,7 +7,7 @@ const MobileNav = ({insta, email,facebook}) => {
     }
     
     return (
-        <div className='flex flex-row justify-between w-full items-center sm:hidden relative px-8'>
+        <div className='flex flex-row justify-between w-full items-center sm:hidden relative px-8 py-3'>
             <div>
                 <img src="/logo.png" alt="Logo" className="h-10 w-10 rounded-full " />
             </div>
