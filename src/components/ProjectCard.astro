@@ -1,0 +1,12 @@
+---
+const {title, image, description, id} = Astro.props;
+import Button from './Button.jsx';
+---
+<a href={"/project/"+id} class='no-underline text-black w-full hover:text-blue-500 transition-colors duration-300'>
+<div class={`relative text-left lg:h-[450px] py-4 max-w-[320px] w-full border-b border-t-0 transition-all duration-[200ms] before:content-[""] before:absolute before:top-0 before:left-0 before:right-0 before:h-[1px] before:bg-current before:scale-x-0 before:origin-left before:transition-transform before:duration-[500ms] hover:before:scale-x-100 `}>
+        <div class='overflow-hidden'><img src={image} alt={title} class='w-full object-cover rounded-lg hover:scale-120 transition-all max-h-[200px] duration-[500ms]'/></div>
+        <h3 class=' font-semibold my-4'>{title}</h3>
+        <p class={ `text-gray-500 text-xs overflow-hidden lg:line-clamp-7 text-wrap`}>{description}</p>
+        <div class='mt-10 lg:absolute bottom-2'><Button text='View Project'/></div>
+</div>
+</a>

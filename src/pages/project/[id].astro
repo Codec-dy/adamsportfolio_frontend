@@ -1,0 +1,13 @@
+---
+import ProjectPageTop from "../../components/ProjectPageTop.astro";
+import { getData } from "../../utils/crud";
+
+const { id } = Astro.params;
+const { api } = Astro.locals;
+const project = await getData(`${api}?model=project&id=${id}`);
+console.log(project);
+---
+
+<div>
+    <ProjectPageTop project={project} />
+</div>

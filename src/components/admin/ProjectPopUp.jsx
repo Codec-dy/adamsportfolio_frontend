@@ -18,8 +18,8 @@ const ProjectPopUp = ({title}) => {
                     <Button text={"Add a Design"} perform={() => {setAddDesign(true)}} client:idle/>
                   </div>
                 </div>
-            <div className={`${addProject?'fixed block':'hidden'} w-[90%] max-w-[600px] top-0 absolute left-[50%] translate-x-[-50%] z-40 bg-gray-200 p-5`}><AddComponent type={"project"} title={"Add project"}  cancel={setAddProject}/></div>
-            <div className={`${addDesign?'fixed block':'hidden'} w-[90%] max-w-[600px] top-0 absolute left-[50%] translate-x-[-50%] z-40 bg-gray-200 p-5`}><AddComponent type={"design"} title={"Add Graphic Design"}  cancel={setAddDesign}/></div>
+            <div className={`${addProject?'fixed block':'hidden'} w-[90%] max-w-[600px] top-0 absolute left-[50%] translate-x-[-50%] z-40 bg-gray-200 p-5 overflow-auto max-h-[90vh]`}><AddComponent type={"project"} title={"Add project"}  cancel={setAddProject}/></div>
+            <div className={`${addDesign?'fixed block':'hidden'} w-[90%] max-w-[600px] top-0 absolute left-[50%] translate-x-[-50%] z-40 bg-gray-200 p-5 overflow-auto max-h-[90vh]`}><AddComponent type={"design"} title={"Add Graphic Design"}  cancel={setAddDesign}/></div>
         </div>
     
   )

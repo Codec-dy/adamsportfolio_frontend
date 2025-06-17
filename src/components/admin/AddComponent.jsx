@@ -19,7 +19,7 @@ const AddComponent = ({type,title,cancel}) => {
 
     const [add,setAdd] = useState(addType(type))
     const [secType,setSecType] = useState('')
-    const api = "http://localhost:3000/api/collection"; 
+    const api = "https://adamsportfolio-backend.onrender.com/api/collection"; 
     const [preview,setPreview] = useState('')
     
      
@@ -44,7 +44,7 @@ const AddComponent = ({type,title,cancel}) => {
           <img src={preview} alt="Preview" className="w-40 h-40 object-cover rounded" />
         </div>
       )}
-         <div onClick={()=>{handleAdd(`${api}?model=${type=="design"?secType:"type"}`,add),cancel(false)}}><Button text={'Add to Collection'}/></div> <span onClick={()=>{cancel(false)}}><Button text={"Cancel"}/> </span>
+         <div onClick={()=>{handleAdd(`${api}?model=${type=="design"?secType:"project"}`,add),cancel(false)}}><Button text={'Add to Collection'}/></div> <span onClick={()=>{cancel(false)}}><Button text={"Cancel"}/> </span>
     </div>
   )
 }
