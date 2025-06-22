@@ -8,6 +8,7 @@ import ProjectPopUp from "../../components/admin/ProjectPopUp"
 import { splitImages } from "../../utils/functions"
 import { getData } from "../../utils/crud"
 import Rows from "../../components/Rows.astro"
+import NothingToShow from "../../components/NothingToShow.astro"
 const {api} = Astro.locals;
 const painting = await getData(api+"?model=painting&getAll=true");
 ---
@@ -15,7 +16,10 @@ const painting = await getData(api+"?model=painting&getAll=true");
 <AdminLayout>
     <Layout2_admin>
         <div class='flex  flex-col gap-2 p-6'>
-            <ProjectPopUp title={"Painting"} client:load/>   
+            <ProjectPopUp title={"Painting"} client:load/> 
+            {painting.length === 0 && (
+            <NothingToShow />
+        )}  
             {splitImages(painting).map((arr, index) => (
                 <Rows images={arr} key={index} isAdmin="true" />
             ))

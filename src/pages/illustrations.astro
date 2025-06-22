@@ -17,6 +17,7 @@ const images = [
 import Title from "../components/Title.astro";
 import { splitImages } from "../utils/functions.js";
 import { getData } from "../utils/crud";
+import NothingToShow from "../components/NothingToShow.astro";
 const {api} = Astro.locals; 
 const illustration = await getData(api+"?model=illustration&getAll=true") || []; 
 ---
@@ -25,6 +26,9 @@ const illustration = await getData(api+"?model=illustration&getAll=true") || [];
     <Layout2>
         <div style="background:rgba(255,255,255,0.8)" class="flex flex-col gap-2 w-screen py-20  px-5 sm:px-40">
             <Title title="Illustrations" />
+            {illustration.length === 0 && (
+            <NothingToShow />
+        )}
             {splitImages(illustration).map((arr, index) => (
                 <Rows images={arr} key={index} />
             ))
