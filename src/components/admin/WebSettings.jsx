@@ -6,7 +6,7 @@ const WebSettings = () => {
 const api = "https://adamsportfolio-backend.onrender.com/api/"; 
 const [show,setShow] = React.useState(false)
 
-const [details, setDetails] = useState({user:'',email: '', phone: '', instagram: '', facebook: '', background: '', education: '', skills: ''});
+const [details, setDetails] = useState({user:'',email: '', phone: '', instagram: '', facebook: '', background: '', education: '', skills: '', frontPage: ''});
 useEffect(() => {
     const fetchWebSettings = async () => {
         const websettings = await getData(api + "collection?model=websettings&getAll=true");
@@ -75,6 +75,10 @@ useEffect(() => {
         <div className='flex flex-col items-start gap-2'>
             <h1 className='font-semibold text-lg'>Skills</h1>
             <textarea onChange={(e)=>setDetails({...details,skills:e.target.value})} className='w-full p-3 rounded-sm border border-gray-400 flex-1' placeholder='Skills' rows='4'  value={details?details.skills:''}></textarea>
+        </div>
+        <div className='flex flex-col items-start gap-2'>
+            <h1 className='font-semibold text-lg'>Frontpage text</h1>
+            <textarea onChange={(e)=>setDetails({...details,frontPage:e.target.value})} className='w-full p-3 rounded-sm border border-gray-400 flex-1' placeholder='frontpage text' rows='4'  value={details?details.frontPage:''}></textarea>
         </div>
         <Button text="Update" perform={handleChange2} />
     </div>

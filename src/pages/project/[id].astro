@@ -1,4 +1,5 @@
 ---
+import NothingToShow from "../../components/NothingToShow.astro";
 import ProjectPageTop from "../../components/ProjectPageTop.astro";
 import Rows from "../../components/Rows.astro";
 import Layout2 from "../../layouts/Layout2.astro";
@@ -19,11 +20,13 @@ console.log(project);
                 <h1 class='text-2xl font-semibold mb-4'><a href="/projects"><img src="/arrow_back.png"/></a></h1>
         </div>
         <ProjectPageTop project={project} />
+        {project.elements.length === 0 && (
+            <NothingToShow />
+        )}
         <div class="flex flex-col gap-2 p-6">
              {splitImages(project.elements).map((arr, index) => (
                 <Rows images={arr} key={index} id={id} isAdmin={false} />
             ))
-
             }
         </div>
     </div>

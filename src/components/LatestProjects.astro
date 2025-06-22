@@ -1,0 +1,22 @@
+---
+import { getData } from "../utils/crud";
+import ProjectCard from "./ProjectCard.astro";
+import Title from "./Title.astro";
+
+const { api } = Astro.locals; 
+const projects = await getData(api + "?model=project&getAll=true");
+---
+<div style="background:rgba(255,255,255,0.8)" class="flex flex-col max-w-[2000px] justify-self-center gap-2 w-screen py-20 px-5 md:px-40">
+            <Title title="Latest Projects" />
+            <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3'>
+                {projects.slice(-3).reverse().map((project:any, index:number) => (
+                    <ProjectCard
+                        title={project.title} 
+                        image={project.img} 
+                        description={project.description}
+                        id={project._id}
+                        />
+                ))}
+                 
+</div>
+</div>

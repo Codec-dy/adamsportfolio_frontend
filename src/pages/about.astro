@@ -20,19 +20,35 @@ details = details[0] || {
                 Thank you for stopping by! Read below to learn more about myself and background.
             </p>
             <div class="w-[720px] max-w-full h-[400px] flex">
-                <img src="/image1.jpg" alt="About Me" class="w-full h-full object-cover rounded-lg shadow-lg mt-4" />
+                <img src="/about.jpg" alt="About Me" class="w-full h-full object-fit rounded-lg shadow-lg mt-4" />
             </div>
             <div class="flex flex-col max-w-[720px] w-full text-left gap-10">
-                <div class="mt-10 flex flex-col lg:flex-row justify-start relative">
-                    <h2 class="w-[300px] text-left text-3xl font-bold text-gray-800  lg:absolute lg:left-[-180px]">Background</h2>
+                <div class="mt-10 flex flex-col justify-start relative">
+                    <h1 class="w-[300px] text-left text-2xl font-bold text-gray-800 ">Brand Statement</h1>
+                    <p class=" max-w-[720px] text-lg">We at Sprout Art and Design aim to create as well as to share with the community.
+We make one off artworks, as well as thoughtful products such as high quality
+T-shirts and stickers. We aim to deliver our work to the public in an accessible way,
+while maintaining sustainable practices. All of the profits go back into the business
+so we can purchase more materials and high quality products. We try to keep our
+prices low so everyone can access our artwork, and we often have special deals as
+well as give aways. Our business celebrates community, relationships, and individuality.
+Sprout Art and Design aims to share our growth in the art world with everyone and
+inspire younger individuals to begin their own journey down the path of creating
+artwork. We do not use AI in our practices because it doesn’t include the intentionality
+of human work, and it steals work from artists who spend their lives to develop this skill.
+To create is to inspire, to inspire is to live.</p>
+                </div>
+            <div class="flex flex-col max-w-[720px] w-full text-left gap-10">
+                <div class="flex flex-col justify-start relative">
+                    <h2 class="w-[300px] text-left text-2xl font-bold text-gray-800 ">Background</h2>
                     <p class=" max-w-[720px]">{details.background}</p>
                 </div>
-                <div class="flex flex-col lg:flex-row justify-start relative">
-                    <h2 class="w-[300px] text-3xl font-bold text-gray-800  lg:absolute lg:left-[-180px]">Education</h2>
+                <div class="flex flex-col justify-start relative">
+                    <h2 class="w-[300px] text-2xl font-bold text-gray-800">Education</h2>
                     <p class=" max-w-[720px] ">{details.education}</p>
                 </div>
-                <div class="flex flex-col lg:flex-row justify-start relative">
-                    <h2 class="w-[300px] text-3xl font-bold text-gray-800  lg:absolute lg:left-[-180px]">Skills</h2>
+                <div class="flex flex-col justify-start relative">
+                    <h2 class="w-[300px] text-2xl font-bold text-gray-800 ">Skills</h2>
                     <p class=" max-w-[720px] ">{details.skills}</p>
                 </div>
             </div>
