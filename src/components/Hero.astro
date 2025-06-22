@@ -12,6 +12,6 @@ let details = await getData(api+"?model=websettings&getAll=true") || [];
           <p class="text-left text-black sm:text-xl">{details[0].frontPage?details[0].frontPage:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, corrupti! Dignissimos illum quisquam fuga unde officiis eveniet non? Neque odit optio nemo explicabo fugiat in placeat ut maxime quibusdam sequi."} </p>
           <a href="work"><Button text={'Projects'} perform={()=>('')} /></a>
      </div>
-     <div class="flex-1 h-full sm:block hidden" style="background: url(bg2.jpeg) no-repeat center center / cover;">
+     <div class="flex-1 sm:block hidden" style="background: url(bg2.jpeg) no-repeat center center / cover;min-height: inherit;">
      </div>
 </div>
