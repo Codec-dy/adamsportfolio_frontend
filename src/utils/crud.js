@@ -35,18 +35,23 @@ const convertBase64 = (file) => {
 
 
   const handleEdit = async (api, updatedExperience,model) => {
+    if(confirm("Are you sure you want to edit this?")) {
     const formData = new FormData();
     for(var key in updatedExperience){
       formData.append(key, updatedExperience[key]);
     }
-    await axios.put(`${api}?${model}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
+    await axios.put(`${api}?model=${model}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
       .then((response) => {
         console.log(response.data);
-        // setRefresh(!refresh);
+        alert("Updated Successfully");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       }).catch((error) => {
         console.log(error);
         console.log('An error occurred while updating');
       });
+    }
   };
 
   const handleAdd = async (api,content) => {
@@ -96,4 +101,18 @@ const changeUser=async(url,info)=>{
     })
     return data
 }
-export {handleDelete,handleEdit,handleAdd,getData, convertBase64,handleFileChange,changeUser};
+const adminLogin = async (url, data) => {
+    
+    try {
+        const response = await axios.post(url, data, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        return response.data; // Return the response data to the caller
+    } catch (error) {
+        console.error('Error:', error);
+        return false; // Return false to indicate failure
+    }
+};
+export {adminLogin,handleDelete,handleEdit,handleAdd,getData, convertBase64,handleFileChange,changeUser};

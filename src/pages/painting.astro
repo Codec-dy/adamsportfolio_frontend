@@ -7,7 +7,7 @@ import Title from "../components/Title.astro"
 import { splitImages } from "../utils/functions.js";
 import { getData } from "../utils/crud";
 const {api} = Astro.locals; 
-const painting = await getData(api+"?model=painting&getAll=true");
+const painting = await getData(api+"?model=painting&getAll=true") || []; 
 ---
 
 <MainLayout>

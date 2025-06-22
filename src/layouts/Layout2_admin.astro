@@ -17,3 +17,14 @@ const { Title = 'Sprout Designs' } = Astro.props;
     </main>
   </div>
 </section>
+
+<script>
+  // Optional: Add any JavaScript functionality here
+const adminToken = sessionStorage.getItem('adminToken');
+// console.log(window.location.pathname.replace('/',''), adminToken);
+console.log((adminToken && window.location.pathname.replace('/','') !== 'admin'));
+
+if ((!adminToken && window.location.pathname.replaceAll('/','') !== 'admin') ) {
+    window.location.href = '/admin/'; // Redirect to login if not authenticated
+}
+</script>

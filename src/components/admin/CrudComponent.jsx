@@ -5,12 +5,11 @@ import { useMyContext } from '../../utils/MyContext';
 const CrudComponent = ({project,id}) => {
      const { editable, setEditable } = useMyContext();
     const [preview,setPreview] = useState('')
-     
      if(editable && editable._id==project._id){
         return (
             <div className='flex flex-col gap-4 p-4 border border-gray-300 rounded-md'>
                 {Object.keys(project).slice(1,-1).map((key,i)=>{
-                return(<div key={i}> {project[key]!==""? <input key={i} onChange={async(e)=>setEditable({...editable,[key]: key=="img"?await handleFileChange(e.target.files[0],setPreview):e.target.value})} type={key=='img'?'file':'text'} value={key=="img"?'':editable[key]} />:''}
+                return(<div key={i}>{project[key]!=="" && key!="elements"?<div><label className="capitalize font-semibold">{key}</label>{key!='img'&&<input key={i} className='w-full' onChange={async(e)=>setEditable({...editable,[key]: key=="img"?await handleFileChange(e.target.files[0],setPreview):e.target.value})} type={key=='img'?'file':'text'} value={key=="img"?'':editable[key]} />}</div>:''}
                 {preview && key=="img" && <div><img className='h-[40px]' src={preview}/></div>}
                 {key=="img" && <div><img className='h-[40px]' src={project[key]}/></div>}</div>)
 
@@ -19,10 +18,10 @@ const CrudComponent = ({project,id}) => {
         )
     }else{
         return (
-            <div className='flex flex-col gap-4 p-4 border border-gray-300 rounded-md'>
-                {Object.keys(project).slice(1,-1).map((key,i)=>{
+            <div className='flex w-full flex-col gap-4 p-4 border border-gray-300 rounded-md'>
+                {Object.keys(project).slice(1,-2).map((key,i)=>{
 
-                return (<div key={i}>{project[key]!==""? <input key={i} className='flex-1' type={key=='img'?'file':'text'} value={key=="img"?'':project[key]} disabled/>:''}
+                return (<div key={i}>{project[key]!=="" && key!="elements" || key!='__v'? <div><label className="capitalize font-semibold">{key}</label>{key!='img'&&<input key={i} className='w-full' type={key=='img'?'file':'text'} value={key=="img"?'':project[key]} disabled/>}</div>:''}
                 {key=="img" && <div><img className='h-[40px]' src={project[key]}/></div>} </div>)
             })}
 

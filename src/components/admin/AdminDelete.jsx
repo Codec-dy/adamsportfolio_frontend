@@ -1,13 +1,30 @@
-import React, { useContext, useState } from 'react'
+import React, { use, useContext, useEffect, useState } from 'react'
 import Button from '../Button';
-import { handleDelete } from '../../utils/crud';
+import { getData, handleDelete, handleEdit } from '../../utils/crud';
 
 
-const AdminDelete = ({id,model}) => {
+const AdminDelete = ({id,model,string}) => {
   const api = "https://adamsportfolio-backend.onrender.com/api/collection";
+  const [elements, setElements] = useState([]);
+  const [project, setProject] = useState(null);
+  if(string){
+    useEffect(() => {
+    getData(api + "?model=project&id=" + id).then(data => setProject(data));
+  }, [id]);
+  useEffect(() => {
+    if (project && project.elements) {
+      setElements(project.elements.filter((el) => el.img !== string));
+      console.log("Elements after deletion:", elements);
+    }
+  }, [project]);
+  }
+  
+
   return (
     <div className='flex flex-col sm:flex-row gap-4'>
-        <div onClick={()=>{handleDelete(api,id,model)}}><Button  text={"Delete"}/></div>
+        {!string&&<div onClick={()=>{handleDelete(api,id,model)}}><Button  text={"Delete"}/></div>}
+        {string&&<div onClick={()=>{handleEdit(api,'',`project&id=${id}&elements=${JSON.stringify(elements)}`)}}><Button  text={"Delete"}/></div>}
+
     </div>
   )
 }

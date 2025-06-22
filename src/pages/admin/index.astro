@@ -1,8 +1,13 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro"
 import Layout2_admin from "../../layouts/Layout2_admin.astro"
+import AdminLogin from "../../components/admin/AdminLogin"
 
-
+function handleLogin(e) {
+    e.preventDefault();
+    // Handle login logic here
+    console.log("Login submitted");
+}
 ---
 <head>
     <meta charset="utf-8" />
@@ -14,13 +19,8 @@ import Layout2_admin from "../../layouts/Layout2_admin.astro"
 </head>
 <body>
 <Layout2_admin>
- <div class='w-[400px] text-black font-semibold mt-[-200px]'>
-        <div class='flex flex-col gap-4 p-4 w-full'>
-        <h1 class='text-2xl font-semibold text-left'>Admin Login</h1>
-        <input  placeholder="Username" type='text' class='w-full border border-gray-900 p-2'/>
-        <input  placeholder="Password" type='password' class='w-full border border-gray-900 p-2'/>
-        <button>Login </button>
-        </div>
-</div>
+  <div class="p-6">
+    <AdminLogin client:load />
+  </div>
 </Layout2_admin>
-</body>
+

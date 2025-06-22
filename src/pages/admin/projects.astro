@@ -12,7 +12,7 @@ const projects = await getData(api + "?model=project&getAll=true");
 
 <AdminLayout>
   <Layout2_admin>
-    <div class="flex flex-col p-6">
+    <div class="flex flex-col p-6 text-left">
       <ProjectPopUp title={"Projects"} client:load />
       <CrudWrapper projects={projects} client:load />
     </div>

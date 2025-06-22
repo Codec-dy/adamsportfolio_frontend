@@ -21,7 +21,7 @@ useEffect(() => {
 
  const handleChange = (e) => {
     // e.preventDefault()
-    const retVal = changeUser(`${api}adminChange`,admin)
+    const retVal = changeUser(`${api}adminChange`,details)
   }
   const handleChange2 = (e) => {
     // e.preventDefault()

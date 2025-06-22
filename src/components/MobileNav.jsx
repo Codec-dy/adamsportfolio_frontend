@@ -12,7 +12,7 @@ const MobileNav = ({insta, email,facebook}) => {
                 <img src="/logo.png" alt="Logo" className="h-10 w-10 rounded-full " />
             </div>
             <div>
-            <img src="menu.png" onClick={() => setOpen(true)} className='w-[50px]' />
+            <img src="/menu.png" onClick={() => setOpen(true)} className='w-[50px]' />
             <nav className={`${open ? "flex " : "hidden"} flex-col text-left bg-zinc-800 fixed left-0 text-white h-screen w-full top-0 z-40 justify-between items-start font-semibold p-4`}>
                 <div className="flex flex-col self-center justify-center items-center w-full">
                     <div className="flex flex-row w-screen justify-between px-12 items-center gap-3">

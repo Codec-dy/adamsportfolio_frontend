@@ -7,7 +7,7 @@ import Title from "../components/Title.astro";
 import { splitImages } from "../utils/functions.js";
 import { getData } from "../utils/crud";
 const {api} = Astro.locals;  
-const projects = await getData(api+"?model=project&getAll=true");
+const projects = await getData(api+"?model=project&getAll=true") || []; 
 ---
 
 <MainLayout>

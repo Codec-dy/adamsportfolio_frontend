@@ -1,6 +1,10 @@
 ---
 import ProjectPageTop from "../../components/ProjectPageTop.astro";
+import Rows from "../../components/Rows.astro";
+import Layout2 from "../../layouts/Layout2.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 import { getData } from "../../utils/crud";
+import { splitImages } from "../../utils/functions";
 
 const { id } = Astro.params;
 const { api } = Astro.locals;
@@ -8,6 +12,20 @@ const project = await getData(`${api}?model=project&id=${id}`);
 console.log(project);
 ---
 
-<div>
-    <ProjectPageTop project={project} />
-</div>
+<MainLayout>
+    <!-- <Layout2> -->
+    <div class="bg-white min-h-[100vh] sm:p-10 p-2">
+        <div class='flex flex-col justify-between items-start'>
+                <h1 class='text-2xl font-semibold mb-4'><a href="/projects"><img src="/arrow_back.png"/></a></h1>
+        </div>
+        <ProjectPageTop project={project} />
+        <div class="flex flex-col gap-2 p-6">
+             {splitImages(project.elements).map((arr, index) => (
+                <Rows images={arr} key={index} id={id} isAdmin={false} />
+            ))
+
+            }
+        </div>
+    </div>
+    <!-- </Layout2>  -->
+</MainLayout>

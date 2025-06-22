@@ -4,7 +4,7 @@ import Layout2 from "../layouts/Layout2.astro"
 import Title from "../components/Title.astro"
 import { getData } from "../utils/crud";
 const {api} = Astro.locals; 
-let details = await getData(api+"?model=websettings&getAll=true") ;
+let details = await getData(api+"?model=websettings&getAll=true")  || []; 
 details = details[0] || {
     instagram: "No Instagram information available.",
     email: "No email information available.",};

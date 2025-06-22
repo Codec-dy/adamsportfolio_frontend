@@ -14,11 +14,13 @@ const illustration = await getData(api+"?model=illustration&getAll=true");
     <Layout2_admin>
          <div class='flex flex-col p-6 overflow-y-scroll'>
             <ProjectPopUp title={"Illustration"} client:load/>
+            <div class="flex flex-col gap-2 mt-2">
               {splitImages(illustration).map((arr, index) => (
                 <Rows images={arr} key={index} isAdmin="true" />
             ))
 
             }
+            </div>
         </div>
         
     </Layout2_admin>

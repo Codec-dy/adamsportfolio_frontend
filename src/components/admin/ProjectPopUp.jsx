@@ -9,7 +9,7 @@ const ProjectPopUp = ({title}) => {
   
     return (
         <div className='flex relative '>
-            <div className='flex gap-5'>
+            <div className='flex flex-col sm:flex-row sm:gap-5 gap-2'>
                   <h1 className='text-2xl font-semibold text-left'>{title}</h1>
                   <div>
                     <Button text={"Add a Project"} perform={() => {setAddProject(true)}} client:idle/>
