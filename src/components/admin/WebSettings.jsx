@@ -6,7 +6,7 @@ const WebSettings = () => {
 const api = "https://adamsportfolio-backend.onrender.com/api/"; 
 const [show,setShow] = React.useState(false)
 
-const [details, setDetails] = useState({user:'',email: '', phone: '', instagram: '', facebook: '', background: '', education: '', skills: '', frontPage: ''});
+const [details, setDetails] = useState({user:'',password:'',email: '', phone: '', instagram: '', facebook: '', background: '', education: '', skills: '', frontPage: ''});
 useEffect(() => {
     const fetchWebSettings = async () => {
         const websettings = await getData(api + "collection?model=websettings&getAll=true");
@@ -14,7 +14,9 @@ useEffect(() => {
             console.error("No web settings found");
             return;
         }
-        setDetails({...websettings[0],password:''});
+        let temp = websettings[0];
+        delete temp.password
+        setDetails(temp);
     };
     fetchWebSettings();
 }, []); 
