@@ -4,7 +4,7 @@ import { getData, handleDelete, handleEdit } from '../../utils/crud';
 
 
 const AdminDelete = ({id,model,string}) => {
-  const api = "https://adamsportfolio-backend.onrender.com/api/collection";
+  const api = "http://52.15.59.206/api/collection";
   const [elements, setElements] = useState([]);
   const [project, setProject] = useState(null);
   if(string){

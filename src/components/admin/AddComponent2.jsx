@@ -18,7 +18,7 @@ const AddComponent2 = ({type,title,cancel,id,elements}) => {
     }
 
     const [add,setAdd] = useState(addType(type))
-    const api = "https://adamsportfolio-backend.onrender.com/api/collection" || []; 
+    const api = "http://52.15.59.206/api/collection" || []; 
     const [preview,setPreview] = useState('')
   
     

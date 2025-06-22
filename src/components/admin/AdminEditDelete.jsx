@@ -5,7 +5,7 @@ import { useMyContext } from '../../utils/MyContext';
 
 
 const AdminDelete = ({id, project,model}) => {
-  const api = "https://adamsportfolio-backend.onrender.com/api/collection";
+  const api = "http://52.15.59.206/api/collection";
   const [isEditing, setIsEditing] = useState(false);
   const { editable, setEditable } = useMyContext();
   const edit = (id,proj) => {

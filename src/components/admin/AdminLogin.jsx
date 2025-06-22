@@ -6,7 +6,7 @@ import { adminLogin } from "../../utils/crud";
 
 export default function AdminLogin() {
   const [loginDetails, setLoginDetails] = useState({});
-  const api = "https://adamsportfolio-backend.onrender.com/";
+  const api = "http://52.15.59.206/";
   useEffect(() => {
     sessionStorage.removeItem('adminToken');
   }, []);
